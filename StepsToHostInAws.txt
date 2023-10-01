@@ -1,4 +1,4 @@
-1. Set Up an AWS EC2 Instance
+1. Set Up an AWS EC2 Instance at first
 
 To begin using AWS EC2, you can follow the following steps as a starting point.
 
