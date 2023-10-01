@@ -1,7 +1,7 @@
-Installation
+#Installation
 npm i react-qr-code
 
-When using this library with React Native, you will also need to have react-native-svg installed.
+#When using this library with React Native, you will also need to have react-native-svg installed.
 npm i react-native-svg
 cd ios && pod install
 
