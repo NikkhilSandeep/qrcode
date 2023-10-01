@@ -1,0 +1,74 @@
+1. Set Up an AWS EC2 Instance
+
+To begin using AWS EC2, you can follow the following steps as a starting point.
+
+a) Log in to the AWS Management Console. If you haven’t already, create an account on the AWS official website.
+b) Navigate to EC2 and click on Launch Instances.
+c) Choose an Amazon Machine Image (AMI) that supports your preferred operating system.
+d) And also configure security groups to allow inbound traffic to your application (e.g., HTTP/HTTPS) as your preferences.
+e) Now you have created your Linux server AWS EC2 instance successfully and then created a new key pair or selected an existing one.
+
+2. Connect to Your EC2 Instance
+  a) Once you have successfully set up your EC2 instance, the next step is to  establish a connection to it.
+   
+  b) Download the created private key (.pem) file for your key pair.
+   
+  c) To connect your key pair you can also use FTP clients like filezilla or putty (if you are a Windows user).
+   
+  d) Set appropriate permissions for the private key file using the following command in the terminal:
+     chmod 400 /path/to/key-pair.pem
+     
+  e) Connect to your instance using SSH.
+     For example: ssh -i /path/to/your-key-pair.pem ec2-user@your-instance-public-ip
+   
+   By following these steps, you will successfully establish a connection to your EC2 instance.
+
+
+3. Update Packages on Your EC2 Instance
+After establishing a connection with your EC2 instance, proceed to update packages in your instance.
+update the packages on your EC2 instance by running the following command:
+sudo yum update
+
+4. Install Node.js and npm
+To install Node.js and npm inside your EC2 instance run the following command:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash source ~/.nvm/nvm.sh nvm install node
+
+5. Clone Your React Application Repository
+To deploy your React application on the EC2 instance, perform the following steps:
+Install Git if it's not already installed on your instance:
+ sudo yum install git
+Clone your React application repository using the command:
+git clone <repository-url>
+
+6. Install Project Dependencies
+After cloning your React application repository, navigate to the repository directory and install the project dependencies.
+
+cd <repository> npm install
+7. Build Your React Application
+To build your React application for production, use the following command:
+npm run build
+
+8. Install a Web Server
+To run your React application on the EC2 instance, install a web server such as Nginx. Nginx provides performance, scalability, caching, load balancing, and
+security features to ensure reliable delivery of your application. Install Nginx using the command:sudo yum install nginx
+
+9. Configure Nginx
+To configure Nginx for your React application, follow these steps:
+Open the Nginx configuration file using the command:
+sudo nano /etc/nginx/nginx.conf
+Update the server block to include the following location block:
+server {...location / {root/path/to/your/react/application/build;
+index index.html;
+try_files $uri /index.html;}... }
+Save the file and exit the editor.
+
+10. Start the Nginx Server
+To start the Nginx server and enable it to start automatically on system boot, use the following commands:
+sudo service nginx startsudo chkconfig nginx on
+An image of nginx web server homepage
+
+11. Access Your React Application
+To access your deployed React application, follow these steps:
+In your Console, find your instance’s public IP address by searching your created EC2 instance.
+Then browse for your deployed application using that IP address or the domain associated with your EC2 instance.
+
