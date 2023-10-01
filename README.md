@@ -1,4 +1,5 @@
 QR CODE GENERATOR
+
 A QR (quick response) code is a two-dimensional barcode readable by a QR code scanners, smart mobile phones with a camera. QR Code can be used to link to any URL. They can also be used to automatically add information into a user’s smartphone such as calendar event, map or personnel contact information. A QR Code is capable of storing several hundred times more information than a conventional barcode and is readable from any direction.
 The Project Comprises of two Parts:
 
